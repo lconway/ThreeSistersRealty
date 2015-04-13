@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+    <div id="div2">
+        @using (Html.BeginForm()) {
+        <fieldset id="search">
+            <legend>Search</legend>
+            MLS#<br />
+            <input type="text" /><br />
+            City<br />
+            <input type="text" /><br />
+            State<br />
+            <input type="text" /><br />
+            Zipcode<br />
+            <input type="text" /><br />
+            Bedrooms<br />
+            <input type="text" /><br />
+            Bathrooms<br />
+            <input type="text" /><br />
+            Sq. Feet<br />
+            <input type="text" /><br />
+            <input type="submit" value="Search" />
+        </fieldset>
+        }
+    </div>
+    <div id="div3">
+        <div class="listing">
+            <img class="listImage" width="230" height="160" src="~/Images/upstairs.jpg" />
+            <div class="listInfo">
+                <h4>1505 NW Lewis St, Bend, OR  97701</h4>
+                <h2>$500,000</h2>
+                3 Bd | 2.5 Ba | Single Family Home
+                <br />
+                1800 Sq Ft | 0.23 Acres
+            </div>
+        </div>
+        <div class="listing">
+            <div class="listImage">
+                <img width="230" height="160" src="~/Images/upstairs.jpg" />
+            </div>
+            <div class="listInfo">
+                <h4>1505 NW Lewis St, Bend, OR  97701</h4>
+                <h2>$500,000</h2>
+                3 Bd | 2.5 Ba | Single Family Home
+                <br />
+                1800 Sq Ft | 0.23 Acres
+            </div>
+        </div>
+    </div>

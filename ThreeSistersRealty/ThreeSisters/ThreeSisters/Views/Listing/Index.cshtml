@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ThreeSisters.Models.Listing>
+
+@{
+    ViewBag.Title = "Listings";
+}
+    <div id="search-div">
+        @using (Html.BeginForm("SearchListings", "Listing", FormMethod.Get)) {
+        <fieldset id="search">
+            <legend>Search</legend>
+            MLS#<br />
+            @Html.TextBox("mslNumber")<br />
+            City<br />
+            @Html.TextBox("city")<br />
+            State<br />
+            @Html.TextBox("state")<br />
+            Zipcode<br />
+            @Html.TextBox("zipcode")<br />
+            Bedrooms<br />
+            @Html.TextBox("bedrooms")<br />
+            Bathrooms<br />
+            @Html.TextBox("bathrooms")<br />
+            Minimum Sq. Feet<br />
+            @Html.TextBox("sqFt")<br />
+            <input type="submit" value="Search" />
+        </fieldset>
+        }
+    </div>
+
+    <div id="listing-div">
+        @foreach (var item in Model) {
+            <div class="listing">
+                @if (item.ImageData != null) {
+                    <img width="250" height="175" 
+                        src="@Url.Action("GetImage", "Admin", new { item.ListingID })" />
+                }
+
+                <div class="listInfo">
+                    <h4>@Html.DisplayFor(modelItem => item.Street1)<br />
+                        <span style="font-weight:300">
+                            @Html.DisplayFor(modelItem => item.City)
+                            @Html.DisplayFor(modelItem => item.State),
+                            @Html.DisplayFor(modelItem => item.Zipcode)
+                        </span></h4>
+                    <h2>@Html.DisplayFor(modelItem => item.SalesPrice)</h2>
+                    @Html.DisplayFor(modelItem => item.Bedrooms) Bd |
+                    @Html.DisplayFor(modelItem => item.Bathrooms) Ba | 
+                    Single Family Home
+                    <br />
+                    @Html.DisplayFor(modelItem => item.SquareFeet) Sq Ft |
+                    @Html.DisplayFor(modelItem => item.LotSize) Acres
+                    <br />
+                    @Html.ActionLink("Details", "Details", new { id=item.ListingID })
+                </div>
+            </div>
+        }
+    </div>

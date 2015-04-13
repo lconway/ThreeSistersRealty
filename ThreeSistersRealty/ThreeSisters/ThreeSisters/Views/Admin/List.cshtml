@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ThreeSisters.Models.Listing>
+
+@{
+    ViewBag.Title = "Listings";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#dp").datepicker();
+        $("#myTable").DataTable();
+    });
+</script>
+
+
+@*@Html.Partial("_MyLoginPartial")*@
+
+<h2>Listings</h2>
+<p>Date:
+    <input type="text" id="dp" name="dp" />
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div id="div4">
+
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>MSL#</th>
+                    <th>Date Listed</th>
+                    <th>Address</th>
+                    <th>Sq Ft</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+@foreach (var item in Model) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.ListingID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MSL)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DateListed)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Street1)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SquareFeet)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SalesPrice)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.ListingID }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.ListingID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.ListingID })
+                    </td>
+                </tr>
+}
+            </tbody>
+        </table>
+
+</div>

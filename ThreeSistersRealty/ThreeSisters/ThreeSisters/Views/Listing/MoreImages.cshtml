@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ThreeSisters.Models.Photo>
+
+@{
+    ViewBag.Title = "MoreImages";
+}
+
+<h2>More Images</h2>
+
+@foreach (var photo in Model) {
+    string imagePath = @ViewBag.Path + photo.ImagePath;
+        <img width="200" height="200" src="@Url.Content(imagePath)" 
+            alt="@photo.ImagePath" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

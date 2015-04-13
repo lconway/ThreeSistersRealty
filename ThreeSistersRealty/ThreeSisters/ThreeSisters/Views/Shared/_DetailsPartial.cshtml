@@ -1,0 +1,104 @@
+﻿@model ThreeSisters.Models.Listing
+@{
+    ViewBag.Title = "Details";
+}
+
+<div id="details">
+    <section>
+        <div id="address">
+            <h2 id="street1">
+                @Model.Street1
+                @Model.Street2
+            </h2>
+            <div id="city-state">
+                @Model.City
+                ,&nbsp
+                @Model.State
+                &nbsp&nbsp
+                @Model.Zipcode
+            </div>
+        </div>
+        <h2 id="price">
+            @Html.DisplayFor(model => model.SalesPrice)
+        </h2>
+    </section>
+    <div class="clear" />
+    @if (Model.ImageData != null) {
+        <img width="600" height="400" 
+            src="@Url.Action("GetImage", "Admin", new { Model.ListingID })" />
+    }
+</div>
+
+<fieldset>
+    <legend>Property Details</legend>
+
+    <div class="display-field property-details">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="general-info-header">General Information</div>
+
+    <table id="general-info-table">
+        <tr>
+            <td>
+                Beds
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Bedrooms)
+            </td>
+            <td class="spacer-col"></td>
+            <td>
+                Baths
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Bathrooms)
+            </td>
+        </tr>
+        <tr>
+            <td>
+               Garage
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.GarageSize)
+            </td>
+            <td class="spacer-col"></td>
+            <td>
+                Sq Ft
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.SquareFeet)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Neighborhood
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Neighborhood)
+            </td>
+            <td class="spacer-col"></td>
+            <td>
+                Lot Size
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LotSize)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                MSL # 
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MSL)
+            </td>
+            <td class="spacer-col"></td>
+            <td>
+                Date Listed
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.DateListed)
+            </td>
+        </tr>
+    </table>
+
+</fieldset>

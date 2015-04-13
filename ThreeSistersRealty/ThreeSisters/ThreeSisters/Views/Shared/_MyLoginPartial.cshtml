@@ -1,0 +1,15 @@
+﻿@if (Request.IsAuthenticated) {
+    <section id="login-partial">
+        <div id="hello">
+            Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        </div>
+        <div id="logOff">
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+                @Html.AntiForgeryToken()
+                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            }
+        </div>
+        <div id="clear" />
+    </section>
+    <br />
+}

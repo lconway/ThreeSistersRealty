@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Three Sisters Realty</title>
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/themes/base/css")
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+        <!-- datatables css -->
+        <link rel="stylesheet" type="text/css" href="~/content/themes/base/jquery.datatables.css">
+
+        <!-- jquery -->
+        <script type="text/javascript" charset="utf8" src="~/scripts/jquery.js"></script>
+  
+        <!-- datatables -->
+        <script type="text/javascript" charset="utf8" src="~/scripts/jquery.datatables.js"></script>
+    </head>
+    <body>
+        <div id="main-div">
+            <h1 id="main-title">Three Sisters Realty</h1>
+            <img width="640" height="150" src="~/Images/3Sisters pan 163KB.jpg" />
+        </div>
+        <div class="clear" />
+        @RenderBody()
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jquerydatatables")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

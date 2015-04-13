@@ -1,0 +1,217 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+
+/* login
+----------------------------------------------------------*/
+/*#login {
+    float: right;
+    display: block;
+    font-size: .85em;
+    margin: 0 0 10px;
+    text-align: right;
+    color: red;
+}
+
+    #login a {
+        background-color: #d3dce0;
+        margin-left: 10px;
+        margin-right: 3px;
+        padding: 2px 3px;
+        text-decoration: none;
+    }
+
+    #login a.username {
+        background: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: underline;
+    }
+
+    #login ul {
+        margin: 0;
+    }
+
+    #login li {
+        display: inline;
+        list-style: none;
+    }*/ 
+
+
+/* site specific
+----------------------------------------------------------*/
+#layout-partial {
+    margin-bottom: 0em;
+}
+#login-partial {
+    margin-top: 0em;
+}
+#hello {
+    float: left;
+}
+#logOff {
+    float: right;
+}
+#main-div {
+    background-color: whitesmoke;
+    font-family: 'Segoe Script';
+    font-weight: bold;
+    padding: .4em;
+    height: 11em;
+    border-bottom: solid gray;
+    margin-bottom: 1em;
+}
+#main-title {
+    float: left;
+    width: 8em;
+    margin-left: 1em;
+    color: cornflowerblue;
+}
+#main-div img{
+    float: right;
+}
+#search-div {
+    float: left;
+    width: 15em; 
+    padding: .3em;
+}
+#search input {
+    margin-bottom: 1em;
+}
+#listing-div {
+    margin-left: 16em;
+    border-left: solid gray;
+    padding: 1em;
+}
+.listing {
+    background-color: whitesmoke;
+    padding: .8em;
+    border: solid lightgray 1px;
+    height: 13em;
+    margin-bottom: 1em;
+}
+.listing img {
+    float: left;
+    margin-right: 3px;
+    border: solid black 1px;
+}
+.listInfo {
+    margin-left: 275px;
+}
+.listInfo h4 {
+    color: darkslateblue;
+}
+.listInfo h2 {
+    color: green;
+}
+#details {
+    width: 600px;
+    margin-top: 0em;
+}
+#details section {
+}
+#details img {
+    margin-top: 2em;
+    border: solid black 1px;
+}
+#address {
+    float: left;
+}
+#address h2 {
+    margin-bottom: 0em;
+}
+#address div {
+    margin-top: 0em;
+}
+#price {
+    float: right;
+    color: green;
+}
+.property-details {
+    margin-bottom: 2em;
+}
+.general-info-header {
+    font-weight: bold;
+    border-bottom: solid lightgray 1px;
+    margin-bottom: 0.5em;
+}
+#general-info-table {
+    width: 565px;
+}
+#general-info-table tr {
+    margin-bottom: 0.5em;
+}
+#general-info-table td {
+    width: 4em;
+    border-bottom: solid lightgray 1px;
+}
+#general-info-table tr td:nth-child(3) {
+    width: 7em;
+    border-bottom: none;
+}
+.next-image {
+    float: left;
+    margin-right: 0.5em;
+}
+.clear {
+    clear: both;
+}

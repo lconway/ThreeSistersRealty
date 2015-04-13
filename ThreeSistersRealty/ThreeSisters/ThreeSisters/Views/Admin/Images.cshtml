@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ThreeSisters.Models.Photo>
+
+@{
+    ViewBag.Title = "Images";
+}
+
+<h2>Images</h2>
+
+@using (Html.BeginForm("Images", "Admin",
+    new { listingId = ViewBag.ListingId },
+    FormMethod.Post, 
+    new { enctype = "multipart/form-data" })) {
+
+    foreach (var photo in Model) {
+        string imagePath = @ViewBag.Path + photo.ImagePath;
+        <div class="next-image">
+            <img width="200" height="200" src="@Url.Content(imagePath)" 
+                alt="@photo.ImagePath"/>
+            <br />
+            @Html.ActionLink("Delete", "DeleteImage", 
+                new { id=photo.PhotoId ,
+                listingId=ViewBag.ListingId })
+        </div>
+    }
+
+    <div class="clear"></div>
+    <br />    
+    <p>
+        Upload new image: <input type="file" name="Image" />
+    </p>
+    <p>
+        <input type="submit" value="Save" />
+    </p>
+}
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
